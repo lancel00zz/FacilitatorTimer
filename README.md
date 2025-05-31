@@ -1,8 +1,38 @@
-## 🔽 Download the Facilitator Timer App
+# Facilitator Timer & Team Tracker
 
-To use the desktop version of the app on macOS:
+**Facilitator Timer** is a lightweight timer and progress-tracking app designed for physical training sessions with small teams. It helps a facilitator manage timing and visually track team progress during interactive labs, team-building activities, or classroom workshops.
 
-👉 [Download FacilitatorTimer.app from Google Drive](https://drive.google.com/drive/folders/1AwM6nLJiA78Dae6qAuydwbO9FxLD1euV?usp=drive_link)
+---
 
-> Requires Docker Desktop installed on your Mac.
-> Once downloaded, double-click `FacilitatorTimer.app` to start.
+## 🖼️ What it does
+
+- Set a countdown timer (e.g., 20 minutes)
+- Input the number of teams participating
+- Display one red dot per team on the left side
+- Allow teams to scan a QR code when finished
+- Each scan turns a red dot into a green one on the right
+- When all teams are done, the timer display changes to ✅ or 🏁
+
+The app can be used in two ways:
+- **Electron App (FacilitatorTimer.app)**: Runs as a macOS desktop-style application with no browser distractions.
+- **Web Browser**: Accessible at `http://localhost:5050` for the same functionality.
+
+---
+
+## 🚀 How to run the app
+
+### 1. ✅ Prerequisites
+
+- **Docker Desktop** must be installed on your machine (macOS or Windows).
+- Internet connection (first time only, to pull the Docker image).
+
+### 2. 🐳 Start the Flask backend (Docker)
+
+Download these two files into a folder on your machine:
+
+- [`docker-compose.yml`](docker-compose.yml)
+- [`start-backend.sh`](start-backend.sh)
+
+Make `start-backend.sh` executable if needed:
+```bash
+chmod +x start-backend.sh
