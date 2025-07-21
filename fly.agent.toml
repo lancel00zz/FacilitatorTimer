@@ -1,0 +1,23 @@
+# fly.agent.toml for Datadog Agent container deployment
+
+app = "ddtimer-agent"
+primary_region = "cdg"
+
+[build]
+  image = "gcr.io/datadoghq/agent:latest"
+
+[env]
+  DD_SITE = "datadoghq.com"
+  DD_APM_ENABLED = "false"
+  DD_LOGS_ENABLED = "true"
+  DD_PROCESS_AGENT_ENABLED = "true"
+  DD_CONTAINER_EXCLUDE = "name:datadog-agent"
+  DD_HOSTNAME = "ddtimer-agent-prod"
+  DD_ENV = "prod"
+  DD_SERVICE = "ddtimer"
+  DD_VERSION = "4.9"
+
+[[vm]]
+  memory = "256mb"
+  cpu_kind = "shared"
+  cpus = 1

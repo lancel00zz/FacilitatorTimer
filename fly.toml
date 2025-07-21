@@ -1,10 +1,10 @@
-# fly.toml for Fly.io deployment
+# fly.toml for facilitator container deployment
 
 app = "ddtimer"
 primary_region = "cdg"
 
 [build]
-  image = "lancel00zz/facilitator-timer-app:latest"
+  image = "lancel00zz/ddtimer:latest"
 
 [http_service]
   internal_port = 5050
@@ -13,6 +13,11 @@ primary_region = "cdg"
   auto_start_machines = true
   min_machines_running = 0
   processes = ["app"]
+
+[env]
+  DD_ENV = "prod"
+  DD_SERVICE = "ddtimer"
+  DD_VERSION = "4.9"
 
 [[vm]]
   memory = "256mb"
